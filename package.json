@@ -1,0 +1,43 @@
+{
+  "name": "canvas-mcp-server",
+  "version": "1.0.0",
+  "description": "A Model Context Protocol server for Canvas LMS integration with FERPA-compliant student data protection",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/server.js",
+    "start": "node dist/server.js",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "canvas",
+    "lms",
+    "education",
+    "mcp",
+    "claude",
+    "ferpa",
+    "privacy",
+    "analytics"
+  ],
+  "author": {
+    "name": "Vishal Sachdev",
+    "email": "svishal2001@gmail.com",
+    "url": "https://github.com/vishalsachdev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishalsachdev/canvas-mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

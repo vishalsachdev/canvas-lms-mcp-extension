@@ -1,0 +1,213 @@
+{
+  "dxt_version": "0.1",
+  "name": "canvas-mcp-server",
+  "version": "1.0.0",
+  "display_name": "Canvas LMS MCP Server",
+  "description": "A Model Context Protocol server for Canvas LMS integration with FERPA-compliant student data protection",
+  "long_description": "The Canvas MCP Server bridges the gap between Claude Desktop and Canvas Learning Management System, providing educators with an intelligent interface to their Canvas environment. Built on the Message Control Protocol (MCP), it enables natural language interactions with Canvas data while maintaining FERPA compliance through advanced privacy protection features.\n\n## Key Features\n\n- **33 comprehensive tools** covering courses, assignments, discussions, rubrics, and analytics\n- **FERPA-compliant data anonymization** protects student privacy automatically\n- **Natural language interface** for complex Canvas operations\n- **Robust error handling** and timeout management\n- **Local-only processing** ensures data security\n\n## Tool Categories\n\n- Course Management (3 tools)\n- Assignment Tools (6 tools) \n- Discussion & Communication (8 tools)\n- Content Management (6 tools)\n- User Management (2 tools)\n- Analytics Tools (3 tools)\n- Rubric Tools (5 tools)",
+  "author": {
+    "name": "Vishal Sachdev",
+    "email": "svishal2001@gmail.com",
+    "url": "https://github.com/vishalsachdev"
+  },
+  "homepage": "https://github.com/vishalsachdev/canvas-lms-mcp-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishalsachdev/canvas-lms-mcp-extension"
+  },
+  "documentation": "https://github.com/vishalsachdev/canvas-lms-mcp-extension#readme",
+  "support": "https://github.com/vishalsachdev/canvas-lms-mcp-extension/issues",
+  "license": "MIT",
+  "keywords": [
+    "canvas",
+    "lms",
+    "education",
+    "mcp",
+    "claude",
+    "ferpa",
+    "privacy",
+    "analytics",
+    "assignments",
+    "discussions"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/server.js",
+        "--canvas-api-url",
+        "${user_config.canvas_api_url}",
+        "--canvas-api-token", 
+        "${user_config.canvas_api_token}",
+        "--ferpa-compliance",
+        "${user_config.ferpa_compliance}"
+      ],
+      "env": {}
+    }
+  },
+  "user_config": {
+    "canvas_api_url": {
+      "type": "string",
+      "title": "Canvas API URL",
+      "description": "The base URL for your Canvas instance (e.g., https://yourinstitution.instructure.com) or https://canvas.yourinstitution.edu",
+      "required": true
+    },
+    "canvas_api_token": {
+      "type": "string",
+      "title": "Canvas API Token",
+      "description": "Your Canvas API access token",
+      "required": true,
+      "secure": true
+    },
+    "ferpa_compliance": {
+      "type": "boolean",
+      "title": "FERPA Compliance",
+      "description": "Enable FERPA-compliant data handling (recommended)",
+      "default": true
+    }
+  },
+  "tools": [
+    {
+      "name": "list_courses",
+      "description": "List all courses for the authenticated user"
+    },
+    {
+      "name": "get_course_details",
+      "description": "Get detailed information about a specific course"
+    },
+    {
+      "name": "get_course_content_overview",
+      "description": "Get a comprehensive overview of course content including pages and modules"
+    },
+    {
+      "name": "list_assignments",
+      "description": "List assignments for a specific course"
+    },
+    {
+      "name": "get_assignment_details",
+      "description": "Get detailed information about a specific assignment"
+    },
+    {
+      "name": "assign_peer_review",
+      "description": "Manually assign a peer review to a student for a specific assignment"
+    },
+    {
+      "name": "list_peer_reviews",
+      "description": "List all peer review assignments for a specific assignment"
+    },
+    {
+      "name": "list_submissions",
+      "description": "List submissions for a specific assignment"
+    },
+    {
+      "name": "get_assignment_analytics",
+      "description": "Get detailed analytics about student performance on a specific assignment"
+    },
+    {
+      "name": "list_discussion_topics",
+      "description": "List discussion topics for a specific course"
+    },
+    {
+      "name": "get_discussion_topic_details",
+      "description": "Get detailed information about a specific discussion topic"
+    },
+    {
+      "name": "list_discussion_entries",
+      "description": "List discussion entries (posts) for a specific discussion topic"
+    },
+    {
+      "name": "get_discussion_entry_details",
+      "description": "Get detailed information about a specific discussion entry including all its replies"
+    },
+    {
+      "name": "post_discussion_entry",
+      "description": "Post a new top-level entry to a discussion topic"
+    },
+    {
+      "name": "reply_to_discussion_entry",
+      "description": "Reply to a student's discussion entry/comment"
+    },
+    {
+      "name": "create_discussion_topic",
+      "description": "Create a new discussion topic for a course"
+    },
+    {
+      "name": "list_announcements",
+      "description": "List announcements for a specific course"
+    },
+    {
+      "name": "create_announcement",
+      "description": "Create a new announcement for a course with optional scheduling"
+    },
+    {
+      "name": "list_pages",
+      "description": "List pages for a specific course"
+    },
+    {
+      "name": "get_page_content",
+      "description": "Get the full content body of a specific page"
+    },
+    {
+      "name": "get_page_details",
+      "description": "Get detailed information about a specific page"
+    },
+    {
+      "name": "get_front_page",
+      "description": "Get the front page content for a course"
+    },
+    {
+      "name": "create_page",
+      "description": "Create a new page in a Canvas course"
+    },
+    {
+      "name": "list_module_items",
+      "description": "List items within a specific module, including pages"
+    },
+    {
+      "name": "list_users",
+      "description": "List users enrolled in a specific course"
+    },
+    {
+      "name": "list_groups",
+      "description": "List all groups and their members for a specific course"
+    },
+    {
+      "name": "get_student_analytics",
+      "description": "Get detailed analytics about student activity, participation, and progress in a course"
+    },
+    {
+      "name": "get_anonymization_status",
+      "description": "Check the current status of student data anonymization"
+    },
+    {
+      "name": "create_student_anonymization_map",
+      "description": "Create a mapping file for de-anonymizing student data locally"
+    },
+    {
+      "name": "list_assignment_rubrics",
+      "description": "Get rubrics attached to a specific assignment"
+    },
+    {
+      "name": "get_assignment_rubric_details",
+      "description": "Get detailed rubric criteria and rating descriptions for an assignment"
+    },
+    {
+      "name": "get_rubric_details",
+      "description": "Get detailed rubric criteria and scoring information"
+    },
+    {
+      "name": "get_submission_rubric_assessment",
+      "description": "Get rubric assessment scores for a specific submission"
+    },
+    {
+      "name": "grade_with_rubric",
+      "description": "Submit grades using rubric criteria"
+    }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "python": ">=3.10"
+  }
+}
