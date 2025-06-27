@@ -19,12 +19,38 @@ This repository is part of a Canvas LMS integration suite:
 |---------|-------------------------|------------------------|
 | **Installation** | One-click install | Manual configuration |
 | **Target Users** | End users, educators | Developers, advanced users |
+| **Tool Count** | **9 core tools** | **8+ comprehensive tools** |
+| **Tool Focus** | Essential read operations | Full Canvas API coverage |
 | **Distribution** | GitHub releases | NPM package |
 | **Dependencies** | Self-contained | Requires Node.js setup |
 | **Updates** | Automatic via releases | Manual npm updates |
 | **Customization** | Limited | Full access to code |
 
-**Recommendation**: Use this desktop extension for easy installation, or the [traditional MCP server](https://github.com/vishalsachdev/canvas-mcp) if you need customization or are integrating into existing workflows.
+### 🎯 Tool Selection Philosophy
+
+This desktop extension provides a **curated subset** of the full Canvas MCP server, focusing on:
+
+**✅ Included (9 Essential Tools):**
+- **Course Management** - List courses, get details, content overview
+- **Assignment Basics** - List assignments, get assignment details  
+- **User & Discussion** - List users, view discussion topics
+- **Analytics** - Student analytics and progress tracking
+- **Privacy Compliance** - FERPA anonymization status
+
+**❌ Not Included (Advanced Features):**
+- **Rubric Tools** - Complex grading workflows
+- **Content Creation** - Announcement/page creation and editing
+- **Advanced Assignment Tools** - Submission management, peer reviews
+- **Advanced Analytics** - Detailed reporting and statistics
+
+### 🚀 Why This Approach?
+
+- **User-Friendly**: Desktop extensions target end users, not power users
+- **Reliability**: Fewer, well-tested tools provide better stability
+- **Privacy-First**: Focus on safe, read-only operations with FERPA compliance
+- **Production-Ready**: Curated tools that work consistently across Canvas instances
+
+**Recommendation**: Use this desktop extension for essential Canvas operations, or the [traditional MCP server](https://github.com/vishalsachdev/canvas-mcp) if you need comprehensive Canvas API coverage or custom workflows.
 
 ## 🌟 About Claude Desktop Extensions
 
