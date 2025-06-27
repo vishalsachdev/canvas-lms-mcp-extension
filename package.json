@@ -7,7 +7,10 @@
     "build": "tsc",
     "dev": "tsc && node dist/server.js",
     "start": "node dist/server.js",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "version:patch": "npm version patch && git push --tags",
+    "version:minor": "npm version minor && git push --tags",
+    "version:major": "npm version major && git push --tags"
   },
   "keywords": [
     "canvas",
