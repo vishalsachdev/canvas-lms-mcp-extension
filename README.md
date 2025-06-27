@@ -4,9 +4,13 @@
 
 A Model Context Protocol (MCP) extension that brings powerful Canvas LMS integration to Claude Desktop with built-in FERPA-compliant student data protection. Built with Node.js and TypeScript for reliability and maintainability.
 
-> **Note**: This extension requires [Claude Desktop](https://www.anthropic.com/desktop) with MCP support.
+> **Note**: This extension requires [Claude Desktop](https://www.anthropic.com/desktop) with MCP support. For more information about the Model Context Protocol and desktop extensions, see the official [Anthropic Engineering Blog Post](https://www.anthropic.com/engineering/desktop-extensions).
 
-## 🌟 Why Use This Extension?
+## 🌟 About Claude Desktop Extensions
+
+This extension is built using the [Model Context Protocol (MCP)](https://www.anthropic.com/engineering/desktop-extensions), a powerful framework that allows Claude to interact with external tools and services. Announced on June 26, 2024, MCP enables secure, privacy-preserving integrations with various platforms directly within Claude Desktop.
+
+### Why Use This Extension?
 
 - **Seamless Canvas Integration**: Access your LMS data directly within Claude
 - **Education-First Security**: Built with FERPA compliance and student privacy at its core
@@ -113,13 +117,27 @@ Check the current status of student data anonymization.
 
 ### Installation
 
-#### Option 1: Install from Release (Recommended)
+#### Option 1: Using Pre-built Extension (Recommended)
 
-1. Download the latest `.dxt` file from [Releases](https://github.com/vishalsachdev/canvas-lms-mcp-extension/releases)
+1. Download the latest `.dxt` file from the `releases` directory in this repository
 2. In Claude Desktop, go to `Settings > Extensions`
 3. Click "Install Extension" and select the downloaded `.dxt` file
 
 #### Option 2: Build from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/vishalsachdev/canvas-lms-mcp-extension.git
+cd canvas-lms-mcp-extension
+
+# Install dependencies
+npm install
+
+# Build the extension
+npm run build
+
+# The extension will be available in the `dist` directory
+```
 
 ```bash
 # Clone the repository
