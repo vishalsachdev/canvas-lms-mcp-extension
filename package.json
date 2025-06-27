@@ -1,6 +1,6 @@
 {
   "name": "canvas-mcp-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Model Context Protocol server for Canvas LMS integration with FERPA-compliant student data protection",
   "main": "dist/server.js",
   "scripts": {
