@@ -7,12 +7,12 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '18'
       - run: npm install && npm run build
-      - run: npx @anthropic-ai/dxt pack
+      - run: npm install -g @anthropic-ai/dxt && dxt pack
       - uses: softprops/action-gh-release@v1
         with:
           files: '*.dxt'
