@@ -6,6 +6,26 @@ A Model Context Protocol (MCP) extension that brings powerful Canvas LMS integra
 
 > **Note**: This extension requires [Claude Desktop](https://www.anthropic.com/desktop) with MCP support. For more information about the Model Context Protocol and desktop extensions, see the official [Anthropic Engineering Blog Post](https://www.anthropic.com/engineering/desktop-extensions).
 
+## 🔗 Related Projects
+
+This repository is part of a Canvas LMS integration suite:
+
+- **[canvas-lms-mcp-extension](https://github.com/vishalsachdev/canvas-lms-mcp-extension)** (this repo) - Desktop Extension (.dxt) for one-click Claude Desktop installation
+- **[canvas-mcp](https://github.com/vishalsachdev/canvas-mcp)** - Traditional MCP server for custom integrations and development
+
+### Which Should You Use?
+
+| Feature | Desktop Extension (.dxt) | Traditional MCP Server |
+|---------|-------------------------|------------------------|
+| **Installation** | One-click install | Manual configuration |
+| **Target Users** | End users, educators | Developers, advanced users |
+| **Distribution** | GitHub releases | NPM package |
+| **Dependencies** | Self-contained | Requires Node.js setup |
+| **Updates** | Automatic via releases | Manual npm updates |
+| **Customization** | Limited | Full access to code |
+
+**Recommendation**: Use this desktop extension for easy installation, or the [traditional MCP server](https://github.com/vishalsachdev/canvas-mcp) if you need customization or are integrating into existing workflows.
+
 ## 🌟 About Claude Desktop Extensions
 
 This extension is built using the [Model Context Protocol (MCP)](https://www.anthropic.com/engineering/desktop-extensions), a powerful framework that allows Claude to interact with external tools and services. Announced on June 26, 2024, MCP enables secure, privacy-preserving integrations with various platforms directly within Claude Desktop.
@@ -108,22 +128,25 @@ Check the current status of student data anonymization.
 
 **Parameters:** None required
 
-## 🚀 Quick Start
+## 🚀 Installation
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) v16 or later
+### Easy Installation (Recommended)
+
+**Download the latest `.dxt` file:**
+1. Go to [Releases](https://github.com/vishalsachdev/canvas-lms-mcp-extension/releases)
+2. Download the latest `canvas-lms-extension.dxt` file
+3. Install in Claude Desktop by opening the `.dxt` file
+
+This provides a one-click installation with all dependencies included.
+
+### Manual Installation
+
+#### Prerequisites
+- [Node.js](https://nodejs.org/) v18 or later
 - [Claude Desktop](https://www.anthropic.com/desktop) with MCP support
 - Canvas API access token (from your Canvas instance)
 
-### Installation
-
-#### Option 1: Using Pre-built Extension (Recommended)
-
-1. Download the latest `.dxt` file from the `releases` directory in this repository
-2. In Claude Desktop, go to `Settings > Extensions`
-3. Click "Install Extension" and select the downloaded `.dxt` file
-
-#### Option 2: Build from Source
+#### Build from Source
 
 ```bash
 # Clone the repository
@@ -136,21 +159,8 @@ npm install
 # Build the extension
 npm run build
 
-# The extension will be available in the `dist` directory
-```
-
-```bash
-# Clone the repository
-git clone https://github.com/vishalsachdev/canvas-lms-mcp-extension.git
-cd canvas-lms-mcp-extension
-
-# Install dependencies
-npm install
-
-# Build the extension
-npm run build
-
-# The extension will be available in the `dist` directory
+# Start the MCP server
+npm start
 ```
 
 ### Configuration
@@ -240,7 +250,7 @@ npm test
 npm run build
 
 # Package for distribution (creates .dxt file)
-npm run package
+npx @anthropic-ai/dxt pack
 ```
 
 ## 🤝 Contributing
